@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Returning to FragerApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f0f2f5; color: #333; }
+    .container { text-align: center; padding: 20px; }
+    .spinner { border: 4px solid rgba(0,0,0,0.1); width: 36px; height: 36px; border-radius: 50%; border-left-color: #09f; animation: spin 1s ease infinite; margin: 0 auto 20px; }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  </style>
+  <script>
+    // This script attempts to redirect the user back to the mobile app
+    // using the app's custom URL scheme for a refresh event.
+    window.onload = function() {
+      window.location.href = "fragerapp://stripe-onboarding/refresh";
+      // Provide a fallback link in case the redirect fails
+      setTimeout(function() {
+        document.getElementById('fallback').style.display = 'block';
+      }, 2000);
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="spinner"></div>
+    <h1>Returning to App...</h1>
+    <p>You will be redirected back to the FragerApp shortly.</p>
+    <div id="fallback" style="display:none; margin-top: 20px;">
+      <p>If you are not redirected, <a href="fragerapp://stripe-onboarding/refresh">click here to return to the app</a>.</p>
+    </div>
+  </div>
+</body>
+</html>
