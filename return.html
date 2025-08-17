@@ -13,7 +13,7 @@
     // This script attempts to redirect the user back to the mobile app
     // using the app's custom URL scheme.
     window.onload = function() {
-      window.location.href = "fragerapp://stripe-onboarding/return";
+      window.location.href = "fragerfantasy://stripe-onboarding/return";
       // Provide a fallback link in case the redirect fails
       setTimeout(function() {
         document.getElementById('fallback').style.display = 'block';
@@ -27,7 +27,7 @@
     <h1>Completing Setup...</h1>
     <p>You will be redirected back to the FragerApp shortly.</p>
     <div id="fallback" style="display:none; margin-top: 20px;">
-      <p>If you are not redirected, <a href="fragerapp://stripe-onboarding/return">click here to return to the app</a>.</p>
+      <p>If you are not redirected, <a href="fragerfantasy://stripe-onboarding/return">click here to return to the app</a>.</p>
     </div>
   </div>
 </body>
